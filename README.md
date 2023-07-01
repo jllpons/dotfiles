@@ -1,6 +1,6 @@
 # dotfiles
 
-![Example](Example.png)
+![Example](screenshot.png)
 
 Like all the cool kids, I had to rice my mac a bit. These are my configuration files for:
 
