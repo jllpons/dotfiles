@@ -15,10 +15,10 @@ FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 SPACE_CLICK_SCRIPT="yabai -m space --focus \$SID 2>/dev/null" # The script that is run for clicking on space components
 
 
-PADDINGS=3 # All paddings use this value (icon, label, background and bar paddings)
+PADDINGS=5 # All paddings use this value (icon, label, background and bar paddings)
 
 POPUP_BORDER_WIDTH=2
-POPUP_CORNER_RADIUS=11
+POPUP_CORNER_RADIUS=2
 
 SHADOW=on
 
@@ -36,16 +36,16 @@ SHADOW=on
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-sketchybar --bar     height=39                                         \
+sketchybar --bar     height=35                                         \
                      color=$BAR_COLOR                                  \
                      shadow=on                                         \
                      position=top                                      \
                      sticky=on                                         \
                      padding_right=7                                   \
                      padding_left=7                                    \
-                     corner_radius=9                                   \
-                     y_offset=10                                       \
-                     margin=10                                         \
+                     corner_radius=50                                   \
+                     y_offset=0                                       \
+                     margin=0                                        \
                      blur_radius=20                                    \
                      notch_width=0                                     \
                                                                        \
@@ -61,9 +61,9 @@ sketchybar --bar     height=39                                         \
                      background.padding_right=$PADDINGS                \
                      background.padding_left=$PADDINGS                 \
                      background.height=26                              \
-                     background.corner_radius=9                        \
-                     popup.background.border_width=2                   \
-                     popup.background.corner_radius=11                 \
+                     background.corner_radius=7                        \
+                     popup.background.border_width=4                   \
+                     popup.background.corner_radius=7                 \
                      popup.background.border_color=$POPUP_BORDER_COLOR \
                      popup.background.color=$POPUP_BACKGROUND_COLOR    \
                      popup.background.shadow.drawing=on
@@ -80,11 +80,10 @@ sketchybar --bar     height=39                                         \
 
 # Uncomment to add apple logo with functionalities: source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
+#source "$ITEM_DIR/front_app.sh"
 
 ##### Adding Center Items #####
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/weather.sh"
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -92,6 +91,7 @@ source "$ITEM_DIR/weather.sh"
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
 source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/weather.sh"
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and

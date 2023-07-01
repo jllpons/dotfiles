@@ -25,6 +25,7 @@ vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, eol or inse
 
 -- line wrapping
 vim.opt.wrap = false
+vim.api.nvim_command('autocmd FileType markdown,text,tex,md set wrap linebreak nolist textwidth=80')
 
 -- search settings
 vim.opt.ignorecase = true

@@ -22,10 +22,20 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
 
   -- Colorschemes:
-  use('gruvbox-community/gruvbox')
+  use('sainnhe/sonokai')
+  use("ellisonleao/gruvbox.nvim")
+  use('sainnhe/gruvbox-material')
+  use('Mofiqul/vscode.nvim')
+  use('folke/tokyonight.nvim')
+  use('marko-cerovac/material.nvim')
   use('Mofiqul/dracula.nvim')
   use({"catppuccin/nvim", as = "catppuccin"})
   use({"rose-pine/neovim", as = "rose-pine",})
+  use("rebelot/kanagawa.nvim")
+  use('shaunsingh/nord.nvim')
+  use('sainnhe/everforest')
+  use('navarasu/onedark.nvim')
+  use('metalelf0/jellybeans-nvim')
 
   -- Status line: 
   use({
@@ -53,5 +63,8 @@ return require('packer').startup(function(use)
 
   -- Ident backlines
   use('lukas-reineke/indent-blankline.nvim')
+
+  -- LaTeX
+  use('lervag/vimtex')
 
      end)

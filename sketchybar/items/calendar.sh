@@ -3,15 +3,17 @@
 sketchybar --add item     calendar center              \
            --set calendar update_freq=15               \
                           script="~/.config/sketchybar/plugins/time.sh" \
-                          icon.color=$BLACK            \
+                          icon.color=$WHITE1           \
                           icon.font="$FONT:Black:12.0" \
                           icon.padding_left=15         \
                           label.width=55               \
                           label.align=right            \
-                          label.color=$BLACK           \
+                          label.color=$WHITE1           \
                           label.padding_right=15       \
                           align=center                 \
-                          background.color=0xffb8c0e0  \
+                          background.color=$BLACK1      \
                           background.height=26         \
-                          background.corner_radius=11  \
+                          background.corner_radius=7 \
+                          background.padding_left=20 \
+
 

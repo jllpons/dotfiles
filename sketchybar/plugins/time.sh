@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-sketchybar --set $NAME icon="$(LC_ALL=ca_ES.ISO8859-15 date '+%A, %d %B')" label="$(date '+%H:%M')"
+sketchybar --set $NAME icon="$(LANG=ca_ES.UTF-8 date '+%A, %d %B')" label="$(date '+%H:%M')"
 

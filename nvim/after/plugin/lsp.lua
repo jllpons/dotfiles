@@ -1,4 +1,11 @@
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
+require'lspconfig'.rust_analyzer.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
 
 local Remap = require("jllz.keymap")
 local nnoremap = Remap.nnoremap
@@ -34,3 +41,6 @@ end
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "pyright", "rust_analyzer" },
+}
