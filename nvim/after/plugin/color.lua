@@ -1,5 +1,5 @@
-vim.opt.background = "dark"
-vim.g.gruvbox_contrast_dark = "hard"
+-- vim.opt.background = "dark"
+-- vim.g.gruvbox_contrast_dark = "hard"
 
  require("catppuccin").setup {
             flavour = "mocha", -- mocha, macchiato, frappe, latte

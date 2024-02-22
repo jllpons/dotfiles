@@ -83,7 +83,7 @@ source "$ITEM_DIR/spaces.sh"
 #source "$ITEM_DIR/front_app.sh"
 
 ##### Adding Center Items #####
-source "$ITEM_DIR/calendar.sh"
+#source "$ITEM_DIR/calendar.sh"
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -91,7 +91,8 @@ source "$ITEM_DIR/calendar.sh"
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/weather.sh"
+source "$ITEM_DIR/calendar.sh"
+#source "$ITEM_DIR/weather.sh"
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and

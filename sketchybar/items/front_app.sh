@@ -7,7 +7,8 @@ sketchybar --add       item         front_app left                \
                                     icon.drawing=off              \
                                     background.padding_left=0     \
                                     background.padding_right=10   \
-                                    label.color=$WHITE            \
+                                    background.color=$BLACK2              \
+                                    label.color=$WHITE1           \
                                     label.font="$FONT:Black:12.0" \
                                     associated_display=active     \
            --subscribe front_app    front_app_switched

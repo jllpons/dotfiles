@@ -14,7 +14,10 @@ require'nvim-treesitter.configs'.setup {
         "python",
         "r",
         "regex",
-        "yaml"
+        "yaml",
+        "rust",
+        "rust",
+        "toml",
     },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

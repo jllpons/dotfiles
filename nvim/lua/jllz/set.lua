@@ -4,7 +4,7 @@ vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 
 -- apparence
-vim.opt.signcolumn = "yes" 
+vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 

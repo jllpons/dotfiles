@@ -17,25 +17,24 @@ return require('packer').startup(function(use)
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
 
-
   -- UndoTree
   use('mbbill/undotree')
 
   -- Colorschemes:
   use('sainnhe/sonokai')
-  use("ellisonleao/gruvbox.nvim")
   use('sainnhe/gruvbox-material')
   use('Mofiqul/vscode.nvim')
-  use('folke/tokyonight.nvim')
   use('marko-cerovac/material.nvim')
   use('Mofiqul/dracula.nvim')
   use({"catppuccin/nvim", as = "catppuccin"})
   use({"rose-pine/neovim", as = "rose-pine",})
-  use("rebelot/kanagawa.nvim")
   use('shaunsingh/nord.nvim')
   use('sainnhe/everforest')
   use('navarasu/onedark.nvim')
   use('metalelf0/jellybeans-nvim')
+  --use('aktersnurra/no-clown-fiesta')
+  use('rmehri01/onenord.nvim')
+
 
   -- Status line: 
   use({
@@ -66,5 +65,17 @@ return require('packer').startup(function(use)
 
   -- LaTeX
   use('lervag/vimtex')
+
+  -- Copilot
+  use('github/copilot.vim')
+
+
+  -- TODO: Seach for full lua implementations:
+  -- Typst
+  use {'kaarmu/typst.vim', ft = {'typst'}}
+
+  -- Nextflow
+  use ('Mxrcon/nextflow-vim')
+  use ('LukeGoodsell/nextflow-vim')
 
      end)

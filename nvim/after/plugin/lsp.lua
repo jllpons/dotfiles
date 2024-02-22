@@ -6,6 +6,18 @@ require'lspconfig'.rust_analyzer.setup{
     capabilities = capabilities,
     on_attach = on_attach
 }
+require'lspconfig'.bashls.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
+require'lspconfig'.typst_lsp.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
+require'lspconfig'.marksman.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
 
 local Remap = require("jllz.keymap")
 local nnoremap = Remap.nnoremap
@@ -42,5 +54,10 @@ end
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "pyright", "rust_analyzer" },
+    ensure_installed = { 
+        "pyright",
+        "rust_analyzer",
+        "r_language_server",
+        "bashls",
+    },
 }

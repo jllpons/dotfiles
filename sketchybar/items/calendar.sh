@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-sketchybar --add item     calendar center              \
+sketchybar --add item     calendar right               \
            --set calendar update_freq=15               \
                           script="~/.config/sketchybar/plugins/time.sh" \
                           icon.color=$WHITE1           \
@@ -14,6 +14,6 @@ sketchybar --add item     calendar center              \
                           background.color=$BLACK1      \
                           background.height=26         \
                           background.corner_radius=7 \
-                          background.padding_left=20 \
+                          background.padding_left=5 \
 
 
