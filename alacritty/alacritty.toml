@@ -1,0 +1,22 @@
+import = [ "~/.config/alacritty/themes/nord.toml" ]
+
+[font]
+size = 14.5
+
+[font.normal]
+#family = "BlexMono Nerd Font"
+#style = "Regular"
+family = "JetBrains Mono"
+style = "Light"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "SemiBold"
+
+[window]
+decorations = "none"
+opacity = 0.95
+
+[window.padding]
+x = 10
+y = 5

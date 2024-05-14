@@ -13,9 +13,34 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope-media-files.nvim' -- TODO: Look for required soft
 
   -- LSP
-  use('neovim/nvim-lspconfig') -- Configurations for Nvim LSP
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    requires = {
+        --- Uncomment the two plugins below if you want to manage the language servers from neovim
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'L3MON4D3/LuaSnip'},
+        {'saadparwaiz1/cmp_luasnip'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-nvim-lua'},
+        -- tabnine
+        {'tzachar/cmp-tabnine'},
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},
+        {'rafamadriz/friendly-snippets'},
+      }
+    }
 
   -- UndoTree
   use('mbbill/undotree')
@@ -35,7 +60,6 @@ return require('packer').startup(function(use)
   --use('aktersnurra/no-clown-fiesta')
   use('rmehri01/onenord.nvim')
 
-
   -- Status line: 
   use({
   'nvim-lualine/lualine.nvim',
@@ -48,23 +72,12 @@ return require('packer').startup(function(use)
     })
   use('nvim-treesitter/nvim-treesitter-context') -- Context with treesitter
 
-  -- Command autocompletion
-  use("hrsh7th/nvim-cmp") -- The completion pluguin
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer") -- Buffer completions
-  use("hrsh7th/cmp-path") -- Path completions
-  use({'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}) -- Tabnine-like completions
-
-  -- Snippets
-  use("L3MON4D3/LuaSnip") -- Snippet engine
-  use("saadparwaiz1/cmp_luasnip")
-  use("rafamadriz/friendly-snippets") -- VScode like snippets
 
   -- Ident backlines
   use('lukas-reineke/indent-blankline.nvim')
 
   -- LaTeX
-  use('lervag/vimtex')
+  -- use('lervag/vimtex')
 
   -- Copilot
   use('github/copilot.vim')
@@ -75,7 +88,6 @@ return require('packer').startup(function(use)
   use {'kaarmu/typst.vim', ft = {'typst'}}
 
   -- Nextflow
-  use ('Mxrcon/nextflow-vim')
   use ('LukeGoodsell/nextflow-vim')
 
      end)

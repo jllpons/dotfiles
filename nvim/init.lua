@@ -1,2 +1,2 @@
 require("jllz")
-print("I use Vim btw.")
+print("Git gud")

@@ -5,8 +5,10 @@ require('lualine').setup {
 --  theme = 'gruvbox',
 --  theme = 'catpuccin'
 --  theme = 'dracula-nvim',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+--  component_separators = { left = '', right = ''},
+--  section_separators = { left = '', right = ''},
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -22,9 +24,15 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {
+        {'branch'}, {'diff'}, {'diagnostics',
+        symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'}}
+    },
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {
+        {'encoding'}, {'fileformat',
+        symbols = {unix = 'unix', dos = 'dos', mac = 'mac'}}, {'filetype'}
+    },
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

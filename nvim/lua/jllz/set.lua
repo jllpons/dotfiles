@@ -30,6 +30,7 @@ vim.api.nvim_command('autocmd FileType markdown,text,tex,md set wrap linebreak n
 -- search settings
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.incsearch = true
 
 -- scrolloff
 vim.opt.scrolloff = 8
@@ -46,3 +47,7 @@ vim.opt.splitbelow = true
 
 -- Defining space as leader key (for keymapping)
 vim.g.mapleader = " "
+
+-- Undo Tree
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true

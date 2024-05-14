@@ -1,63 +1,73 @@
-require'lspconfig'.pyright.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-require'lspconfig'.rust_analyzer.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-require'lspconfig'.bashls.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-require'lspconfig'.typst_lsp.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-require'lspconfig'.marksman.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
+local lsp_zero = require('lsp-zero')
 
-local Remap = require("jllz.keymap")
-local nnoremap = Remap.nnoremap
-local inoremap = Remap.inoremap
+lsp_zero.preset("recommended")
 
-local function config(_config)
-	return vim.tbl_deep_extend("force", {
-		on_attach = function()
-			nnoremap("gd", function() vim.lsp.buf.definition() end)
-			nnoremap("K", function() vim.lsp.buf.hover() end)
-			nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-			nnoremap("<leader>vd", function() vim.diagnostic.open_float() end)
-			nnoremap("[d", function() vim.diagnostic.goto_next() end)
-			nnoremap("]d", function() vim.diagnostic.goto_prev() end)
-			nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
-			nnoremap("<leader>vco", function() vim.lsp.buf.code_action({
-                filter = function(code_action)
-                    if not code_action or not code_action.data then
-                        return false
-                    end
 
-                    local data = code_action.data.id
-                    return string.sub(data, #data - 1, #data) == ":0"
-                end,
-                apply = true
-            }) end)
-			nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
-			nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
-			inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
-		end,
-	}, _config or {})
-end
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
+
+lsp_zero.set_preferences({
+  sign_icons = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  }
+})
+
+lsp_zero.setup()
 
 require("mason").setup()
-require("mason-lspconfig").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { 
+    ensure_installed = {
         "pyright",
+        "ruff_lsp",
         "rust_analyzer",
         "r_language_server",
         "bashls",
+        "lua_ls",
+        "marksman"
+    },
+    handlers = {
+        lsp_zero.defalut_setup,
+        pyright = function()
+            require('lspconfig').pyright.setup({})
+        end,
+        ruff_lsp = function()
+            require('lspconfig').ruff_lsp.setup({})
+        end,
+        rust_analyzer = function()
+            require('lspconfig').rust_analyzer.setup({})
+        end,
+        bashls = function()
+            require('lspconfig').bashls.setup({})
+        end,
+        lua_ls = function()
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
+        end,
+        marksman = function()
+            require('lspconfig').marksman.setup({})
+        end,
     },
 }
+
+
+local cmp = require('cmp')
+local cmp_action = lsp_zero.cmp_action()
+
+cmp.setup({
+  -- if you don't know what is a "source" in nvim-cmp read this:
+  -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/autocomplete.md#adding-a-source
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'luasnip', keyword_length = 2},
+    {name = 'buffer', keyword_length = 3},
+    }
+})
+
+
