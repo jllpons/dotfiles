@@ -1,0 +1,2 @@
+# Search for all of the files containing "foo"
+grep -r "foo"

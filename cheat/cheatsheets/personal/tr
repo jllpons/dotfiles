@@ -1,0 +1,8 @@
+# Delete all occurrences of the specified set of characters from the input:
+tr -d 'input_characters' < path/to/file
+
+# Translate the contents of a file to upper-case:
+tr "[:lower:]" "[:upper:]" < path/to/file
+
+# Show spaces as `*` and tabs as `&`
+cat <file> | tr " " "*" | tr "\t" "&"

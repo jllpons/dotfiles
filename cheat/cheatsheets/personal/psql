@@ -1,0 +1,1 @@
+psql -h host1 -U user1 -d dbname1 -c "COPY (SELECT * FROM tablename ORDER BY column 1) TO STDOUT WITH (FORMAT CSV, HEADER, DELIMITER E'\t')" > db1_table.tsv

@@ -1,0 +1,5 @@
+# Change ana lready created file to note (.md)
+nb rename computer:2 --to-note
+
+# List all tags
+nb --tags -a

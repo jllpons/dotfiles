@@ -1,0 +1,7 @@
+brew install tldr
+brew install cheat
+brew install xwmx/taps/nb
+
+YABAI
+SKHD
+TMUX
