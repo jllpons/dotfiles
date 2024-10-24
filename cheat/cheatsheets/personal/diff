@@ -1,0 +1,2 @@
+# Collapse two mulit-sets into sets and report if they are different
+diff -q <(sort set1 | uniq) <(sort set2 | uniq)

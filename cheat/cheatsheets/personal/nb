@@ -3,3 +3,6 @@ nb rename computer:2 --to-note
 
 # List all tags
 nb --tags -a
+
+# Make a note using the 'paper' template
+cat .config/nb/templates/paper.md | nb papers: add marinRocoProteinFamily2008.md

@@ -1,0 +1,5 @@
+# Connect to whisky fomr UAB wifi
+ssh -p 8443 joanllu@whisky.uab.cat
+
+# ABiMS
+ssh jponsramon@ssh.sb-roscoff.fr

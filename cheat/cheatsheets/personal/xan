@@ -1,0 +1,8 @@
+# Transfrom column 4 to log(2) in a csv file
+# Remeber xan uses 0-base indexes so column 4 is actually 3
+# `log(col(3))` will store the log of the value in column 4
+# `div(log(col(3)),log(2))` will store the log base 2 of the value in column 4
+# `-E "report"` will report errors to stderr (e.g. missing values, strings in numeric columns, etc.)
+xan transform 3 "div(log(col(3)),log(2))" data..csv -E "report"
+# -log10(col(11)) will store the -log10 of the value in column 11
+xan transform 11 'neg(div(log(col(11)),log(10)))' data/dge/GSE206442.csv -E "log"

@@ -1,0 +1,2 @@
+# Curl a link in silent mode and pipe it
+curl -s <your_url> | foo | bar

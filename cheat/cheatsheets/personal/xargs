@@ -1,0 +1,12 @@
+# Execute the command once for each input line, replacing any occurrences
+# of the placeholder (here marked as `%`) with the input line
+arguments_source | xargs -I % command % optional_extra_arguments
+
+# Search for each ID in id_list in the output from `src/printval.py` using grep
+cat id_list.txt | xargs -I{} bash -c 'grep "{}" <(python src/printval.py id_mapper locus_tag,refseq_locus_tag)'
+
+
+# $1 is the file name
+# $2 is the delimiter
+# _ is the name of the shell script (the one is being executed with sh -c)
+ls | xargs -I{} sh -c 'echo "$1"; head "$1" | xsv headers -d "$2"' _ {} $'\t'

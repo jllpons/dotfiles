@@ -4,3 +4,7 @@ conda env create -f environment.yml
 # Update dependecies listed in YAML file
 # Note: `--prune` will remove any dependencies that are no longer required
 conda env update --file environment.yml --prune
+
+
+# Delete an environment (remove all packages)
+conda remove --name environment_name --all

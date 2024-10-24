@@ -1,2 +1,14 @@
 # Search for all of the files containing "foo"
 grep -r "foo"
+
+# Look for set membership
+grep -xc 'element' set
+    # outputs 1 if element is in set
+    # outputs >1 if set is a multi-set
+    # outputs 0 if element is not in set
+
+# Intersection between two sets
+grep -xF -f set1 set2
+    # Interpret  PATTERN  as  a  list  of  fixed  strings,  separated by
+    # newlines, any of which is to be matched.
+

@@ -1,0 +1,2 @@
+# Get the SHA256 of a docker image
+docker inspect --format='{{index .RepoDigests 0}}' $image

@@ -1,7 +1,25 @@
-brew install tldr
-brew install cheat
-brew install xwmx/taps/nb
-
 YABAI
 SKHD
 TMUX
+
+# TODO: Test this
+brew install harelba/q/q
+
+```shell
+brew install tldr
+brew install cheat
+brew install xwmx/taps/nb
+brew install glow
+
+# moreutils and parallel, but not the parallel from moreutils
+brew install moreutils
+brew unlink moreutils
+brew install parallel
+brew link --overwrite moreutils
+brew unlink parallel
+brew link --overwrite parallel
+
+brew install --cask docker
+# colima is used for docker containers
+brew install colima
+```

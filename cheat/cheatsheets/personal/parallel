@@ -1,0 +1,4 @@
+# Search using `grep` for each one of the ellements present in the
+# `colored_proteins.txt` file. Use `grep` for searching each on of
+# them in the full_proteome_graph file
+cat colored_proteins.txt | parallel -I{} 'grep "{}" <(cat full_proteome_graph.csv | cut -f1)'

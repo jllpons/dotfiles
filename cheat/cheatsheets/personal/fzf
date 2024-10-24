@@ -1,0 +1,2 @@
+# Start `fzf` on all files in the specified directory
+find path/to/directory -type f | fzf

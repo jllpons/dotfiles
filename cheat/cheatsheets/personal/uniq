@@ -1,0 +1,2 @@
+# Display number of occurrences of each line, sorted by the most frequent
+sort path/to/file | uniq -c | sort -nr

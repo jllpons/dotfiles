@@ -1,0 +1,37 @@
+# Reads each line from filename, adds the number to sum, and prints the total at the end.
+awk '{ sum += $1 } END { print sum }'
+
+# Split a multi-fasta file into individual fasta files
+awk '/^>/{s=++d".fasta"} {print > s}' <multi.fasta>
+
+# Transfrom column 2 ($2) to log2($2) in a csv file
+# `-F`, sets the field separator to comma
+# `NR==1{print; next}` prints the first line and skips to the next line
+# `$2 = log($2)/log(2)` sets the second column to the log base 2 of the second column
+# `OFS=,` sets the output field separator to comma
+awk -F, 'NR==1{print; next} { $2 = log($2)/log(2); print }' OFS=, input.csv > output.csv
+
+# A tsv file that has first column like this:
+# 'Smlt4215 [65-76]_VIYGQYAGSSYK_1xPhospho [Y3(100)]'
+awk -F$'\t' '{
+    # Split the first column by underscore
+    split($1, arr, "_");
+
+    # Further split the first part of arr by space to get Accession and Positions
+    split(arr[1], arr1, " ");
+    accession = arr1[1];
+    positions = arr1[2];
+
+    # The peptide sequence is the second part after splitting by underscore
+    peptide_sequence = arr[2];
+
+    # The PTM information is the third part
+    ptm = arr[3];
+
+    # Print the new columns along with the rest of the original columns
+    printf "%s\t%s\t%s\t%s", accession, peptide_sequence, positions, ptm;
+    for(i=2; i<=NF; i++) {
+        printf "\t%s", $i;
+        }
+    printf "\n";
+    }' input.tsv > output.tsv

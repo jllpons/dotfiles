@@ -1,0 +1,2 @@
+# DOS to Unix
+sed $'s/\r$//'
